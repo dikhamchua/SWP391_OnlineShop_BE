@@ -152,6 +152,12 @@ public class AccountServiceImpl implements AccountService {
 
     @Override
     public Optional<Account> findById(Integer userId) {
+        if (userId == null) {
+            throw new IllegalArgumentException("User ID cannot be null");
+        }
+        if (userId <= 0) {
+            throw new IllegalArgumentException("User ID must be positive");
+        }
         return accountRepository.findById(userId);
     }
 
