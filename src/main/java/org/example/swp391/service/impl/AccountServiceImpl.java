@@ -138,6 +138,15 @@ public class AccountServiceImpl implements AccountService {
 
     @Override
     public Optional<Account> findByEmail(String email) {
+        if (email == null) {
+            throw new IllegalArgumentException("Email cannot be null");
+        }
+        if (email.isEmpty()) {
+            throw new IllegalArgumentException("Email cannot be empty");
+        }
+        if (email.trim().isEmpty()) {
+            throw new IllegalArgumentException("Email cannot be blank");
+        }
         return accountRepository.findByEmail(email);
     }
 
