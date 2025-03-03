@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.example.swp391.constant.AccountConst;
+import org.example.swp391.constant.BlogConst;
 
 
 @NoArgsConstructor
@@ -43,6 +44,28 @@ public enum ErrorCode {
     // Other business rules (1040-1049)
     CANNOT_DELETE_ADMIN_ERROR(1040, AccountConst.CANNOT_DELETE_ADMIN),
     USER_ID_POSITIVE_ERROR(1041, AccountConst.USER_ID_POSITIVE),
+    
+    // Blog existence errors (2000-2009)
+    BLOG_NOT_EXIST_ERROR(2000, BlogConst.BLOG_NOT_EXIST),
+    AUTHOR_NOT_EXIST_ERROR(2001, BlogConst.AUTHOR_NOT_EXIST),
+    
+    // Blog null checks (2010-2019)
+    BLOG_ID_NULL_ERROR(2010, BlogConst.BLOG_ID_NULL),
+    TITLE_NULL_ERROR(2011, BlogConst.TITLE_NULL),
+    AUTHOR_ID_NULL_ERROR(2012, BlogConst.AUTHOR_ID_NULL),
+    
+    // Blog empty/blank checks (2020-2029)
+    TITLE_EMPTY_ERROR(2020, BlogConst.TITLE_EMPTY),
+    TITLE_BLANK_ERROR(2021, BlogConst.TITLE_BLANK),
+    TITLE_REQUIRED_ERROR(2022, BlogConst.TITLE_REQUIRED),
+    
+    // Blog validation errors (2030-2039)
+    TITLE_INVALID(2030, BlogConst.TITLE_INVALID),
+    CONTENT_INVALID(2031, BlogConst.CONTENT_INVALID),
+    STATUS_INVALID(2032, BlogConst.STATUS_INVALID),
+    
+    // Blog other business rules (2040-2049)
+    BLOG_ID_POSITIVE_ERROR(2040, BlogConst.BLOG_ID_POSITIVE),
     ;
 
     private int code;
